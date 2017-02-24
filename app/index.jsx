@@ -7,8 +7,8 @@ class App extends React.Component {
   render() {
     var events = [];
 
-    this.props.events.forEach((event) => {
-      events.push(<Event event={event} />)
+    this.props.events.forEach((event, index) => {
+      events.push(<Event event={event} key={index} />)
     })
 
     return (
