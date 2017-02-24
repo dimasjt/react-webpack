@@ -1,7 +1,19 @@
 import React from 'react';
 import { render } from 'react-dom';
+import reactCSS from 'reactcss';
 
 import Event from './components/Event.jsx';
+
+const styles = reactCSS({
+  'default': {
+    container: {
+      width: '500px',
+      minHeight: '300px',
+      padding: '18px',
+      margin: '0 auto'
+    }
+  }
+})
 
 class App extends React.Component {
   render() {
@@ -12,7 +24,7 @@ class App extends React.Component {
     })
 
     return (
-      <div>
+      <div style={ styles.container }>
         { events }
       </div>
     );
@@ -20,8 +32,8 @@ class App extends React.Component {
 }
 
 const EVENTS = [
-  { title: 'Ruby on Rails meetup Bandung' },
-  { title: 'ReacJS meetup Jakarta' }
+  { name: 'Ruby on Rails meetup Bandung', description: 'Lorem ipsum', capacity: 3, status: 'started' },
+  { name: 'ReacJS meetup Jakarta', description: 'Lorem ipsum too', capacity: 3, status: 'started' }
 ]
 
 render(<App events={EVENTS} />, document.getElementById('app'))
