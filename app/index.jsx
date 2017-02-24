@@ -3,6 +3,7 @@ import { render } from 'react-dom';
 import reactCSS from 'reactcss';
 
 import Event from './components/Event.jsx';
+import Service from './services/service.js';
 
 const styles = reactCSS({
   'default': {
@@ -16,11 +17,25 @@ const styles = reactCSS({
 })
 
 class App extends React.Component {
+  constructor() {
+    super();
+
+    this.state = {
+      events: []
+    }
+  }
+
+  componentDidMount() {
+    Service.events.search().then((response) => {
+      this.setState({ events: response.data.events })
+    })
+  }
+
   render() {
     var events = [];
 
-    this.props.events.forEach((event, index) => {
-      events.push(<Event event={event} key={index} />)
+    this.state.events.forEach((event, index) => {
+      events.push(<Event event={event} key={event.id} />)
     })
 
     return (

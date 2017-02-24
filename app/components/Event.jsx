@@ -23,20 +23,24 @@ class Event extends React.Component {
 
     return (
       <div style={ styles.eventCard }>
-        <h3 style={ styles.title }>{ event.name }</h3>
+        <h3 style={ styles.title }>{ event.name.text }</h3>
         <div>
           <span>{ event.status }</span>
-          <span>{ event.start }</span>
-          <span>{ event.end }</span>
         </div>
-        <p>{ event.description }</p>
+        <p>{ event.description.text }</p>
       </div>
     );
   }
 }
 
 Event.propTypes = {
-  event: React.PropTypes.object
+  event: React.PropTypes.shape({
+    start: React.PropTypes.object,
+    end: React.PropTypes.object,
+    name: React.PropTypes.object,
+    description: React.PropTypes.object,
+    logo: React.PropTypes.object
+  })
 }
 
 export default Event;

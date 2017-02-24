@@ -18,7 +18,7 @@ const config = {
         loader: 'react-hot-loader'
       },
       {
-        test: /\.jsx?$/,
+        test: /\.(jsx|js)?$/,
         exclude: /node_modules/,
         loader: 'babel-loader',
         query: {
