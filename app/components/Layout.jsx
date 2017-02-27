@@ -10,13 +10,15 @@ const styles = reactCSS({
       margin: '0 auto'
     },
     sidebar: {
-      width: '30%'
+      width: '30%',
+      display: 'inline-block'
     },
     sidebarUl: {
       listStyle: 'none'
     },
     content: {
-      width: '70%'
+      width: '70%',
+      display: 'inline-block'
     }
   }
 })

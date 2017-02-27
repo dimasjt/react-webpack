@@ -3,12 +3,12 @@ import { Route, Link } from 'react-router';
 
 import Layout from './components/Layout.jsx';
 import ListEvents from './components/ListEvents.jsx';
-import ListTodos from './components/Todo/ListTodos.jsx';
+import TodoWrapper from './components/Todo/index.jsx';
 
 const routes = (
   <Route path="/" component={Layout}>
     <Route path="/events" component={ListEvents} />
-    <Route path="/todos" component={ListTodos} />
+    <Route path="/todos" component={TodoWrapper} />
   </Route>
 );
 
