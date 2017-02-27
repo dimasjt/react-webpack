@@ -1,4 +1,17 @@
 import React from 'react';
+import reactCSS from 'reactcss';
+
+const styles = reactCSS({
+  'default': {
+    textField: {
+      padding: "7px 9px",
+      borderRadius: "4px",
+      border: '1px solid #cccccc',
+      fontSize: '16px',
+      minWidth: '50%'
+    }
+  }
+})
 
 export default class SearchTodo extends React.Component {
   constructor(props) {
@@ -17,7 +30,7 @@ export default class SearchTodo extends React.Component {
     return (
       <div>
         <form>
-          <input type="text" placeholder="Search here..." onChange={this.handleFilter} />
+          <input style={styles.textField} type="text" placeholder="Search here..." onChange={this.handleFilter} />
         </form>
       </div>
     )

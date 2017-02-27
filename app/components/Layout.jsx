@@ -11,10 +11,27 @@ const styles = reactCSS({
     },
     sidebar: {
       width: '30%',
-      display: 'inline-block'
+      display: 'inline-block',
+      verticalAlign: 'top'
     },
     sidebarUl: {
-      listStyle: 'none'
+      listStyle: 'none',
+      margin: 0,
+      padding: 0,
+      paddingRight: 20
+    },
+    sidebarLi: {
+      display: 'block',
+      position: 'relative',
+      width: '100%',
+      borderBottom: '1px solid #dddddd'
+    },
+    sidebarLink: {
+      color: '#ffffff',
+      padding: '10px',
+      backgroundColor: '#cccccc',
+      display: 'block',
+      textDecoration: 'none'
     },
     content: {
       width: '70%',
@@ -29,8 +46,12 @@ export default class Layout extends React.Component {
       <div style={styles.container}>
         <div style={styles.sidebar}>
           <ul style={styles.sidebarUl}>
-            <li><Link to="/events">Events</Link></li>
-            <li><Link to="/todos">Todos</Link></li>
+            <li style={styles.sidebarLi}>
+              <Link style={styles.sidebarLink} to="/events">Events</Link>
+            </li>
+            <li style={styles.sidebarLi}>
+              <Link style={styles.sidebarLink} to="/todos">Todos</Link>
+            </li>
           </ul>
         </div>
         <div style={styles.content}>
